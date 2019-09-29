@@ -3,6 +3,6 @@ node{
     git 'https://github.com/monbostest/java-code1.git'
   }
   stage('Comple-Package'){
-    sh mvn install
+    sh 'mvn install'
   }
 }
