@@ -6,7 +6,7 @@ node{
     sh 'mvn package'
     }
   stage('docker buid'){
-   sh 'docker build -t nippy/myapp:2.0'
+   sh 'docker build -t nippy/myapp:2.0 .'
   }
   stage('push'){
    sh 'docker login -u nippy -p Redhat@123456'
