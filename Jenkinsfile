@@ -16,6 +16,6 @@ node{
    sh 'kubectl run myapp --image=nippy/myapp:3.0 --restart=Never'
   }
   stage('Create Service to access '){
-   sh 'kubectl expose myapp --port=8080 --type=LoadBalancer  --name=myapp'
+   sh 'kubectl expose pod myapp --port=8080 --type=LoadBalancer  --name=myapp'
   }
 }
