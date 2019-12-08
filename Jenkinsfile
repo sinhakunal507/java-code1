@@ -10,7 +10,7 @@ node{
   }
   stage('push'){
    sh 'docker login -u nippy -p Redhat@123456'
-   sh 'docker push nippy/myapp:2.0'
+   sh 'docker push nippy/myapp:3.0'
   }
   stage('Deploy an Application'){
    sh 'kubectl run myapp --image=nippy/myapp:3.0 --restart=Never'
