@@ -13,6 +13,9 @@ node{
    sh 'docker push nippy/myapp:2.0'
   }
   stage('Deploy an Application'){
-   sh 'docker run -d  -p 8081:8080  nippy/myapp:3.0'
+   sh 'kubectl run myapp --image=nippy/myapp:3.0 --restart=Never'
+  }
+  stage('Create Service to access '){
+   sh 'kubectl expose myapp --port=8080 --type=LoadBalancer  --name=myapp'
   }
 }
