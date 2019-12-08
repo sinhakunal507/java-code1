@@ -13,6 +13,6 @@ node{
    sh 'docker push nippy/myapp:2.0'
   }
   stage('Deploy an Application'){
-   sh 'docker run -p 8081:8080  nippy/myapp:3.0'
+   sh 'docker run -d  -p 8081:8080  nippy/myapp:3.0'
   }
 }
