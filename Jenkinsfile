@@ -6,13 +6,13 @@ node{
     sh 'mvn package'
     }
   stage('docker buid'){
-   sh 'docker build -t nippy/myapp:2.0 .'
+   sh 'docker build -t nippy/myapp:3.0 .'
   }
   stage('push'){
    sh 'docker login -u nippy -p Redhat@123456'
    sh 'docker push nippy/myapp:2.0'
   }
-  stage('run this'){
-   sh 'docker run -p 8081:8080  nippy/myapp:2.0'
+  stage('Deploy an Application'){
+   sh 'docker run -p 8081:8080  nippy/myapp:3.0'
   }
 }
