@@ -2,7 +2,7 @@ node{
   stage('SCM Checkout') {
     git 'https://github.com/monbostest/java-code1.git'
     }
-  stage('compile code') {
+  stage('Package  code') {
     sh 'mvn package'
     }
   stage('docker buid'){
@@ -13,9 +13,6 @@ node{
    sh 'docker push nippy/myapp.$BUILD_NUMBER'
   }
   stage('Deploy an Application'){
-   sh 'kubectl run myapp --image=nippy/myapp.$BUILD_NUMBER --restart=Never'
+   sh 'docker run -d -p 5601:8080  nippy/myapp.$BUILD_NUMBER'
   }
-  stage('Create Service to access '){
-   sh 'kubectl expose pod myapp --port=8080 --type=LoadBalancer  --name=myapp'
   }
-}
