@@ -67,13 +67,6 @@ public class Student {
 	public void setYearPassed(String yearPassed) {
 		this.yearPassed = yearPassed;
 	}
-	public String getyearfailed() {
-		return yearfailed;
-	}
-
-	public void setyearfailed(String yearfailed) {
-		this.yearfailed = yearfailed;
-	}
 	
 }
  
